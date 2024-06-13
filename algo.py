@@ -2,10 +2,10 @@ from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import hashes, serialization
 
 # Private Key Generation
-def private_key_gen():
+def private_key_gen(key_size1):
     private_key = rsa.generate_private_key(
         public_exponent=65537,
-        key_size=2048)
+        key_size=key_size1)
     return private_key
 
 def public_key_gen(private_key):

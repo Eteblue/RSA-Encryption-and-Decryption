@@ -5,10 +5,15 @@ def read_large_file(file_path):
             yield line
 
 # Store Encrypted File
-def store_encrypted_file(file_path, encrypted_data):
-    with open(file_path, 'a') as file:
-        file.write(encrypted_data)
-        file.write("\n")
+def store_encrypted_file(file_path, encrypted_data,type):
+    if type=="hex":
+        with open(file_path, 'a') as file:
+            file.write(encrypted_data)
+            file.write("\n")
+    else:
+        with open(file_path, 'ab') as file:
+            file.write(encrypted_data)
+            file.write(b"\n")
 
 # Read Encrypted File
 def read_encrypted_file(file_path):
